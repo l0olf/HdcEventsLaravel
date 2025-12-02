@@ -1,0 +1,1607 @@
+/* PALETA DE CORES
+   Primária: #FF5722 (Laranja vibrante)
+   Secundária: #333333 (Cinza escuro para texto)
+   Fundo: #fefefe (Fundo suave)
+*/
+
+:root {
+    --primary-color: #FF5722;
+    --primary-hover: #E64A19;
+    --text-dark: #2c3e50;
+    --text-muted: #7f8c8d;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --danger: #ff4757;
+    --info: #2ed573;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+}
+
+/* GENERAL 🎨 */
+
+/* Usando 'sans-serif' como fallback caso 'roboto' não carregue */
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* Fundo branco suave para maior contraste e sensação de modernidade */
+    background-color: #ffffff;
+    min-height: 100vh;
+    /* Espaço maior para o footer, com padding mais generoso */
+    padding-bottom: 120px;
+    position: relative;
+    color: #333333; /* Cor de texto padrão mais escura */
+}
+
+/* Links em geral */
+a {
+    color: #FF5722;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #E64A19; /* Laranja um pouco mais escuro no hover */
+}
+
+
+/* BOTÕES */
+.btn {
+    display: inline-block;
+    padding: 10px 20px !important;
+    border-radius: 8px; /* Bordas mais arredondadas */
+    font-weight: 500 !important;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+
+/* NAVBAR ✨ */
+
+header{
+    background-color: #fff;
+    /* Sombra mais suave e elegante */
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    /* Adiciona uma linha inferior sutil para separação */
+    border-bottom: 1px solid #eee;
+}
+
+#navbar{
+    /* Ajustei a largura para um valor fixo máximo e usei % */
+    width: 95%;
+    max-width: 1200px; /* Limite máximo para telas grandes */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    /* Padding vertical mais elegante */
+    padding: 15px 20px;
+}
+
+
+
+
+#navbar img{
+    /* Altura da logo um pouco maior */
+    height: 45px;
+}
+
+button.navbar-toggler{
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #FF5722 !important;
+    font-weight: 700;
+}
+
+.navbar-nav{
+    list-style: none;
+    display: flex;
+    /* Espaçamento maior entre os itens */
+    gap: 30px;
+}
+
+.nav-item a{
+    font-weight: 400; /* Peso normal */
+    color: #555; /* Cor de link mais suave */
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-item a:hover{
+    color: #FF5722;
+}
+
+.exit-icon{
+    margin-right: 10px;
+    padding-top: 2px;
+}
+
+
+
+.btn-primary {
+    /* Estrutura */
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 50px; /* Formato de pílula */
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    /* Tipografia */
+    font-family: 'Poppins', sans-serif; /* Certifique-se de importar a fonte */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    color: #ffffff !important;
+    text-decoration: none;
+
+    /* O Segredo do "Bonito" (Gradiente + Sombra Colorida) */
+    background: linear-gradient(135deg, #FF5722 0%, #ff8a50 100%);
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.35); /* Glow laranja */
+
+    /* Animação Suave */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Estado Hover (Mouse em cima) */
+.btn-primary:hover {
+    /* Levanta o botão e aumenta o brilho da sombra */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 87, 34, 0.5);
+    color: #ffffff;
+}
+
+/* Estado Active (Clicando) */
+.btn-primary:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3);
+}
+
+/* SEARCH CONTAINER / BANNER 🏞️ */
+
+#search-container {
+    position: relative;
+    /* Aqui combinamos o overlay preto com a sua imagem */
+    background: url('../img/bgsearch.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito Parallax (a imagem fica parada quando rola) */
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+
+    /* Garante que o container não vaze */
+    overflow: hidden;
+}
+
+/* TÍTULO */
+#search-container h1 {
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: -1px; /* Deixa as letras mais juntinhas (moderno) */
+}
+
+/* FORMULÁRIO */
+#search-container form {
+    width: 100%;
+    max-width: 600px; /* Largura ideal para não ficar muito esticado */
+    position: relative;
+}
+
+/* INPUT DE BUSCA (A ESTRELA ⭐) */
+#search-container .form-control {
+    width: 100%;
+    height: 60px; /* Barra mais alta é mais elegante */
+    padding: 0 30px; /* Bastante espaço interno */
+
+    /* O visual Limpo e Minimalista */
+    background-color: #ffffff;
+    border: none; /* Remove bordas cinzas feias */
+    border-radius: 50px; /* Formato Pílula (Pill Shape) */
+
+    font-size: 1.1rem;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+
+    transition: all 0.3s ease;
+}
+
+/* Placeholder (o texto "Procurar...") */
+#search-container .form-control::placeholder {
+    color: #aaa;
+    font-weight: 400;
+}
+
+/* EFEITO AO CLICAR NA BARRA */
+#search-container .form-control:focus {
+    outline: none; /* Remove contorno azul padrão do navegador */
+    transform: scale(1.02); /* Aumenta levemente de tamanho */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4); /* Sombra aumenta */
+    background-color: #fff; /* Garante que continua branco */
+}
+
+/* ELEMENTOS DE FORMULÁRIO GERAIS (Usado também na busca) */
+.form-control{
+    width: 100%;
+    padding: 12px 15px; /* Padding mais generoso */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Bordas mais suaves */
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* EVENTS CONTAINER - LAYOUT DE CARDS 🖼️ */
+#events-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto 40px auto; /* Mais respiro no topo */
+    text-align: center;
+    padding: 0 15px;
+}
+
+#events-container h2 {
+    color: #2D3436; /* Cinza escuro elegante (quase preto) */
+    font-size: 2.8rem;
+    font-weight: 800; /* Extra bold para impacto */
+    letter-spacing: -1px; /* Letras levemente mais juntas (moderno) */
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    border: none; /* Removemos a borda simples antiga */
+    padding-bottom: 10px;
+}
+
+/* O detalhe (sublinhado) moderno e arredondado */
+#events-container h2::after {
+    content: '';
+    display: block;
+    width: 60px; /* Largura fixa para ficar centralizado e curto */
+    height: 6px; /* Altura da linha */
+    background: linear-gradient(90deg, #FF5722 0%, #ff8a50 100%); /* Gradiente Laranja */
+    margin: 10px auto 0; /* Centraliza a linha */
+    border-radius: 10px; /* Deixa as pontas da linha redondas */
+}
+
+#events-container p {
+    color: #636e72; /* Cinza médio para subtítulos */
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.6; /* Altura da linha para melhor leitura */
+    margin-bottom: 50px;
+
+    /* Truque de Design: Limita a largura do texto para não cansar a leitura */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ========================================= */
+/* 📦 CARDS DE EVENTOS (PREMIUM STYLE) */
+/* ========================================= */
+
+#cards-container {
+    display: grid;
+    /* Cria colunas automáticas: Mínimo 280px, Máximo 1 fração do espaço */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 16px; /* Bordas mais suaves */
+    overflow: hidden; /* Essencial para o efeito de zoom na imagem */
+    border: none;
+    /* Sombra inicial suave e espalhada */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efeito elástico sutil */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Garante que todos tenham a mesma altura */
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Sobe mais que antes */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Container da imagem para controlar o zoom */
+.card-image-wrapper {
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Efeito Zoom na Imagem ao passar o mouse no Card */
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay de Data (Badge Flutuante) */
+.card-date-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgb(255, 255, 255);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #FF5722;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+.card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ocupa o espaço restante */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #2D3436;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.card-participants {
+    font-size: 1rem !important;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 6px;
+    margin: 0px 0 70px 0 !important;
+}
+
+.card-participants ion-icon {
+    color: #FF5722;
+    font-size: 1.1rem;
+}
+
+/* Ajuste do Botão dentro do Card */
+.card .btn {
+    margin-top: auto; /* Empurra o botão para o final do card */
+    width: 100%; /* Botão largura total fica mais moderno em cards */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/* FOOTER 📢 */
+
+footer{
+    background-color: #333333; /* Fundo mais escuro/elegante */
+    color: #fff;
+    text-align: center;
+    padding: 20px 20px; /* Padding vertical maior */
+    position: absolute;
+    /* Aumentei a altura para corresponder ao padding-bottom do body */
+    bottom: 0;
+    width: 100%;
+}
+
+footer p{
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* CRIAÇÃO DE EVENTOS / FORMULÁRIO 📝 */
+
+#event-create-container{
+    width: 90%;
+    max-width: 800px;
+    margin: 70px auto;
+    text-align: center;
+}
+
+
+
+#event-create-container h1 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+/* Detalhe sutil abaixo do título */
+#event-create-container h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), #ff9f43);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#event-create-form{
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 40px; /* Padding interno generoso */
+    background-color: #fff;
+    border: none;
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); /* Sombra elegante */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espaço maior */
+}
+.form-group label{
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Aplicação dos estilos melhorados para os controles de formulário */
+.form-group input, #form-group textarea, .form-control{
+    padding: 12px 15px;
+    border: 1px solid #ddd !important; /* Borda mais clara */
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #555;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo para textarea que estava faltando */
+textarea {
+    resize: vertical;
+}
+
+/* FOCO DO FORMULÁRIO */
+.form-group input:focus, .form-control:focus, textarea:focus {
+    /* Foco mais sutil, usando a cor primária */
+    border-color: #FF5722 !important;
+    box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.25) !important;
+    outline: none; /* Remove o outline padrão do navegador */
+}
+
+
+/* MENSAGEM DE SUCESSO/ERRO */
+.msg{
+    padding: 15px;
+    margin: 0 !important;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    /* Estilos mais vibrantes para sucesso */
+    color: #0F5132;
+    background-color: #D1E7DD;
+    border: 1px solid #BAD7C9;
+}
+
+/* Exemplo de estilo para mensagem de erro */
+.msg.error {
+    color: #842029;
+    background-color: #F8D7DA;
+    border-color: #F5C2C7;
+}
+
+.nav-item{
+    display: flex;
+    align-items: center;
+}
+
+#file-upload-button{
+    background-color: #FF5722;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* ===================================== */
+/* DETALHES DO EVENTO (PÁGINA INDIVIDUAL) */
+/* ===================================== */
+
+/* Contêiner Principal do Hero (imagem + info) */
+.event-detail-hero {
+    padding-top: 50px; /* Mais espaço no topo */
+    padding-bottom: 50px; /* Mais espaço na base */
+}
+
+/* Imagem Principal */
+.event-image-detail {
+    border-radius: 12px; /* Mantém as bordas arredondadas */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada e elegante */
+    border: none; /* Remove a borda inferior, a sombra já dá o destaque */
+    width: 100%;
+    height: 450px; /* Altura fixa para a imagem para um visual mais consistente */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+/* Card de Informações do Evento */
+.event-info-card {
+    background-color: #fff; /* Fundo branco para o card de informações */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra para o card */
+    padding: 30px !important; /* Mais padding interno */
+    height: 100%; /* Garante que o card ocupe a altura total da coluna */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente dentro do card */
+}
+
+/* Título do Evento */
+.event-title-detail {
+    color: #333333;
+    font-size: 3rem; /* Título maior e mais impactante */
+    font-weight: 800; /* Mais pesado para maior destaque */
+    line-height: 1.1;
+    margin-bottom: 25px !important; /* Mais espaço abaixo do título */
+    /* Linha de destaque sutil */
+    border-left: 5px solid #FF5722;
+    padding-left: 15px;
+}
+
+/* Grupo de Meta-Informações (Local, Participantes, Dono) */
+.event-meta-group {
+    padding: 20px 0; /* Mais padding */
+    border-top: 1px solid #eee; /* Linha de separação mais discreta */
+    border-bottom: 1px solid #eee; /* Adiciona uma linha inferior para delimitar */
+    margin-bottom: 30px !important; /* Mais espaço abaixo do grupo */
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.15rem; /* Um pouco maior */
+    color: #555;
+    margin-bottom: 12px !important; /* Espaçamento entre os itens */
+}
+.meta-item:last-child {
+    margin-bottom: 0 !important; /* Remove margem do último item */
+}
+
+.meta-item ion-icon {
+    color: #FF5722; /* Ícones na cor primária */
+    font-size: 1.6rem; /* Ícones um pouco maiores */
+    margin-right: 12px;
+    transform: translateY(-1px);
+}
+.meta-item strong {
+    color: #333333; /* Deixa o "Local:", "Participantes:" mais escuro */
+    font-weight: 600;
+    margin-right: 5px; /* Espaço entre o label e o valor */
+}
+
+/* Botão de Confirmação */
+.event-confirm-btn {
+    padding: 14px 35px !important; /* Botão ainda maior e mais convidativo */
+    font-size: 1.2rem !important;
+    border-radius: 60px !important; /* Botão mais arredondado */
+    box-shadow: 0 6px 15px rgba(255, 87, 34, 0.3); /* Sombra mais suave, mas visível */
+}
+.event-confirm-btn:hover {
+    box-shadow: 0 8px 20px rgba(255, 87, 34, 0.4); /* Sombra maior no hover */
+    transform: translateY(-3px); /* Efeito de levantar mais pronunciado */
+}
+
+/* Seção "Sobre o evento" */
+#description-container {
+    padding: 30px; /* Mais padding interno */
+    background-color: #fff; /* Fundo branco para a seção de descrição */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    border-left: 5px solid #FF5722; /* Linha de destaque lateral */
+}
+
+.description-title {
+    color: #333333;
+    font-size: 2.2rem; /* Título da descrição maior */
+    font-weight: 700;
+    margin-bottom: 25px !important;
+    padding-left: 0; /* Remove padding left anterior */
+    border-left: none; /* Remove a borda lateral anterior */
+    text-align: start; /* Centraliza o título da descrição */
+    position: relative;
+}
+.description-title::after { /* Elemento decorativo abaixo do título da descrição */
+    content: '';
+    display: block;
+    width: 60px; /* Largura da linha */
+    height: 4px;
+    background-color: #FF5722;
+    margin: 10px 0; /* Centraliza a linha */
+    border-radius: 2px;
+}
+
+.event-description {
+    font-size: 1.1rem; /* Texto da descrição um pouco maior */
+    color: #444; /* Cor de texto um pouco mais escura para melhor contraste */
+    line-height: 1.8;
+}
+
+/* ===================================== */
+/* ESTILOS ESPECÍFICOS PARA CHECKBOXES E RADIOS */
+/* ===================================== */
+
+/* Estilo para o rótulo principal (Adicione itens de infraestrutura:) */
+.form-label-top {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 15px; /* Mais espaço abaixo do título da lista */
+    display: block; /* Garante que ocupe a linha toda */
+}
+
+/* Contêiner da Lista de Checkboxes */
+.checkbox-list-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Espaço entre cada item */
+}
+
+/* Item individual (Checkbox + Label) */
+.checkbox-item {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o checkbox e o texto */
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover sutil no item para melhorar a interatividade */
+.checkbox-item:hover {
+    background-color: #fcece7; /* Laranja bem suave no hover */
+}
+
+/* Estilo do Rótulo do Item (o texto) */
+.checkbox-item label {
+    margin: 0;
+    font-weight: 400;
+    color: #333333;
+    cursor: pointer;
+    font-size: 1.05rem;
+    line-height: 1;
+}
+
+/* Estilização Customizada do Input Checkbox */
+.checkbox-item input[type="checkbox"] {
+    /* Esconde o checkbox padrão do navegador */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 20px; /* Tamanho do quadrado */
+    height: 20px;
+    border: 2px solid #ccc; /* Borda padrão cinza claro */
+    border-radius: 4px; /* Borda levemente arredondada */
+    margin-right: 15px; /* Espaço entre o quadrado e o texto */
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    flex-shrink: 0; /* Impede que o checkbox diminua em layouts flex */
+}
+
+/* Estado MARCADO do Checkbox */
+.checkbox-item input[type="checkbox"]:checked {
+    background-color: #FF5722; /* Fundo primário */
+    border-color: #FF5722; /* Borda primária */
+}
+
+/* Ícone de check customizado (usando pseudo-elemento) */
+.checkbox-item input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Desenha o 'V' (check) */
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Foco para acessibilidade */
+.checkbox-item input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.25);
+}
+
+/* ===================================== */
+/* ESTILIZAÇÃO DA LISTA DE ITENS DO EVENTO */
+/* ===================================== */
+
+/* Título Secundário (O evento conta com:) */
+#description-container h3 {
+    color: #333333;
+    font-size: 2rem; /* Tamanho para subtítulo */
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee; /* Linha de separação discreta */
+    padding-bottom: 5px;
+}
+
+/* Lista de Itens Principal */
+.event-items-list {
+    list-style: none; /* Remove os marcadores de lista padrão (bolinhas) */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Permite que os itens fiquem lado a lado se houver espaço */
+    flex-wrap: wrap; /* Quebra a linha se a tela for pequena */
+    gap: 15px; /* Espaço entre os 'chips' */
+}
+
+/* Item Individual (o 'chip') */
+.event-item {
+    background-color: #fcece7; /* Fundo laranja muito suave (Laranja primário com muita transparência) */
+    color: #FF5722; /* Texto na cor primária */
+    border: 1px solid #FF5722;
+    padding: 8px 15px;
+    border-radius: 50px; /* Bordas super arredondadas (estilo "chip" ou "tag") */
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Adiciona um ícone customizado antes do texto (usando pseudo-elemento) */
+.event-item::before {
+    /* Código unicode para um ícone de "check" ou "estrela" (aqui usando um simples círculo/bullet para consistência) */
+    content: '★';
+    font-size: 0.8rem;
+    line-height: 1;
+    margin-right: 8px;
+    color: #FF5722;
+    /* Faz o ícone se destacar um pouco mais */
+    transform: translateY(1px);
+}
+
+/* Efeito de hover (opcional, mas dá um toque extra) */
+.event-item:hover {
+    background-color: #FF5722; /* Fundo se torna primário */
+    color: #fff; /* Texto fica branco */
+    border-color: #E64A19;
+    box-shadow: 0 4px 8px rgba(255, 87, 34, 0.2);
+}
+
+/* Ajusta a cor do ícone no hover */
+.event-item:hover::before {
+    color: #fff;
+}
+
+.dashboard-title-container {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.dashboard-title-container h1 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+/* Detalhe sutil abaixo do título */
+.dashboard-title-container h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), #ff9f43);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ===================================== */
+/* CONTAINER DOS EVENTOS (CARD) 📦 */
+/* ===================================== */
+
+.dashboard-events-container {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0,0,0,0.02);
+    margin-bottom: 60px;
+}
+
+/* ===================================== */
+/* ESTILIZAÇÃO DA TABELA 📊 */
+/* ===================================== */
+
+.table {
+    width: 100%;
+    border-collapse: separate; /* Permite espaçamento entre linhas */
+    border-spacing: 0 15px; /* Espaço vertical entre as linhas */
+    margin-top: -15px; /* Correção visual do topo */
+}
+
+/* Cabeçalho */
+.table thead th {
+    background-color: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    padding: 0 20px 10px 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Corpo e Linhas */
+.table tbody tr {
+    background-color: var(--white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    border-radius: var(--radius);
+}
+
+.table tbody tr:hover {
+    transform: translateY(-3px); /* Efeito de elevação leve */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+}
+
+/* Células */
+.table td {
+    padding: 20px;
+    vertical-align: middle;
+    border: none;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* Arredondar cantos da primeira e última célula para o efeito de "Card" na linha */
+.table td:first-child {
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.table td:last-child {
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+/* Título do Evento (Link) */
+.event-title {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: color 0.2s;
+}
+
+.event-title:hover {
+    color: var(--primary-color);
+}
+
+/* Badge de Participantes */
+.badge-participants {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #eafbf0;
+    color: #20bf6b;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ===================================== */
+/* BOTÕES DE AÇÃO 🔘 */
+/* ===================================== */
+
+.actions-col {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    margin: 0 5px;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* Botão Editar */
+.btn-action.edit {
+    background-color: #f1f2f6;
+    color: var(--text-dark);
+}
+
+.btn-action.edit:hover {
+    background-color: #dfe4ea;
+    color: #2f3542;
+    transform: scale(1.05);
+}
+
+/* Botão Deletar */
+.btn-action.delete {
+    background-color: #ffebed;
+    color: var(--danger);
+}
+
+.btn-action.delete:hover {
+    background-color: var(--danger);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+/* ===================================== */
+/* EMPTY STATE (SEM EVENTOS) 🏜️ */
+/* ===================================== */
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-state ion-icon {
+    font-size: 4rem;
+    color: #dfe4ea;
+    margin-bottom: 20px;
+}
+
+.empty-state p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.btn-create {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-create:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.edit-icon-btn{
+    margin-left: 3px;
+    margin-bottom: 3px;
+}
+
+/* ========================================= */
+/* 📞 PÁGINA DE CONTATO (SPLIT CARD) */
+/* ========================================= */
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: 80vh; /* Ocupa boa parte da tela */
+}
+
+.contact-box {
+    background-color: #fff;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+    overflow: hidden; /* Garante que o gradiente não vaze nas bordas arredondadas */
+}
+
+/* --- LADO ESQUERDO (INFO) --- */
+.contact-info {
+    flex: 1; /* Ocupa 1 parte */
+    background: linear-gradient(135deg, #FF5722 0%, #ff8a50 100%); /* Seu gradiente padrão */
+    color: #fff;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.info-item ion-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    background: rgba(255, 255, 255, 0.2); /* Fundo translúcido no ícone */
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.social-links {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a ion-icon {
+    color: #fff;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.social-links a ion-icon:hover {
+    transform: scale(1.2);
+}
+
+/* --- LADO DIREITO (FORMULÁRIO) --- */
+.contact-form {
+    flex: 1.5; /* Ocupa 1.5 partes (maior que a info) */
+    background-color: #fff;
+    padding: 50px;
+}
+
+.contact-form h2 {
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* Estilo dos Inputs com Animação (Floating Label) */
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: #333;
+    border: none;
+    border-bottom: 2px solid #ddd; /* Apenas linha embaixo */
+    outline: none;
+    background: transparent;
+    transition: border-color 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.input-group textarea {
+    height: 80px;
+    resize: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 1rem;
+    color: #999;
+    pointer-events: none; /* Permite clicar "através" da label */
+    transition: 0.3s ease all;
+}
+
+/* Animação mágica: Quando foca ou tem texto válido */
+.input-group input:focus,
+.input-group input:valid,
+.input-group textarea:focus,
+.input-group textarea:valid {
+    border-bottom-color: #FF5722;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:valid ~ label {
+    top: -20px;
+    font-size: 0.85rem;
+    color: #FF5722;
+    font-weight: 600;
+}
+
+
+.card-image-preview {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ==========================================================================
+   🚀 ANIMAÇÕES & EFEITOS VISUAIS (NOVO)
+   Cole esta seção no FINAL do seu arquivo CSS.
+   Ela injeta vida nos elementos que você já estilizou acima.
+   ========================================================================== */
+
+/* --- 1. DEFINIÇÃO DOS MOVIMENTOS (KEYFRAMES) --- */
+
+/* Entrada suave de baixo para cima (Usado em Cards e Textos) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Entrada vindo da esquerda (Usado em tabelas e listas) */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Navbar descendo suavemente ao carregar a página */
+@keyframes slideDownNav {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pulsação suave (Para botões de destaque ou badges) */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 87, 34, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 87, 34, 0); }
+}
+
+/* Flutuar (Para imagens ou ícones de destaque) */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* --- 2. APLICAÇÃO DAS ANIMAÇÕES DE ENTRADA (LOAD) --- */
+
+/* Navbar desce suavemente */
+#navbar {
+    animation: slideDownNav 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Título e Busca no Banner aparecem subindo */
+#search-container h1,
+#search-container form {
+    opacity: 0; /* Começa invisível */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+#search-container form {
+    animation-delay: 0.3s; /* Aparece um pouco depois do título */
+}
+
+/* Cards de Eventos - Efeito Cascata (Stagger)
+   Isso faz um card aparecer depois do outro, super elegante. */
+.card {
+    opacity: 0;
+    animation: fadeInUp 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+/* Aplica delay nos primeiros 5 cards para o efeito cascata */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Linhas da Tabela (Dashboard) vindo da esquerda */
+.table tbody tr {
+    opacity: 0;
+    animation: slideInLeft 0.5s ease-out forwards;
+}
+.table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+.table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+
+/* Página de Detalhes do Evento */
+.event-image-detail {
+    animation: fadeInUp 0.8s ease-out;
+}
+.event-info-card {
+    animation: fadeInUp 0.8s ease-out 0.2s backwards; /* 0.2s de atraso */
+}
+
+/* --- 3. MICRO-INTERAÇÕES E HOVERS (INTERATIVIDADE) --- */
+
+/* Efeito de clique em QUALQUER botão (sensação tátil) */
+.btn:active,
+.btn-primary:active,
+.event-confirm-btn:active,
+#file-upload-button:active {
+    transform: scale(0.95) !important; /* Diminui levemente ao clicar */
+    transition: transform 0.1s;
+}
+
+/* Animação do Sublinhado nos Links da Navbar */
+.nav-item a {
+    position: relative;
+}
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FF5722;
+    transition: width 0.3s ease-in-out;
+}
+.nav-item a:hover::after {
+    width: 100%; /* A linha cresce da esquerda para a direita */
+}
+
+/* Checkbox Personalizado - Efeito "Pulo" ao marcar */
+.checkbox-item input[type="checkbox"]:checked {
+    animation: pulseGlow 0.4s linear;
+    transform: scale(1.1);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Chips/Tags de Eventos - Flutuar levemente no hover */
+.event-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Botão de Confirmação Principal - Pulsar para chamar atenção */
+.event-confirm-btn {
+    /* Animação infinita suave para chamar atenção */
+    animation: pulseGlow 2s infinite;
+}
+.event-confirm-btn:hover {
+    animation: none; /* Para a pulsação ao passar o mouse */
+    transform: translateY(-4px) scale(1.02);
+}
+
+/* Ícones Sociais (Rodapé ou Contato) */
+.social-links a ion-icon {
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Efeito elástico */
+}
+.social-links a:hover ion-icon {
+    transform: rotate(360deg) scale(1.2); /* Gira e aumenta */
+    color: #FF5722;
+}
+
+/* Empty State (Ícone quando não tem eventos) */
+.empty-state ion-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Efeito magnético suave nos inputs do formulário */
+.form-control:focus,
+.input-group input:focus {
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    .contact-box {
+        flex-direction: column; /* Empilha um sobre o outro */
+    }
+
+    .contact-info {
+        padding: 30px;
+    }
+
+    .contact-form {
+        padding: 30px;
+    }
+}
+
+/* ===================================== */
+/* RESPONSIVIDADE (MOBILE) 📱 */
+/* ===================================== */
+
+@media (max-width: 768px) {
+    .dashboard-title-container h1 {
+        font-size: 2rem;
+    }
+
+    .dashboard-events-container {
+        padding: 20px;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+    }
+
+    .table thead {
+        display: none;
+    }
+
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tbody tr {
+        margin-bottom: 20px;
+        background-color: var(--white);
+        box-shadow: var(--shadow-soft);
+        padding: 15px;
+    }
+
+    /* As células agora são linhas dentro do card */
+    .table td {
+        text-align: right;
+        padding: 10px 0;
+        position: relative;
+        border-bottom: 1px solid #f1f2f6;
+        border-radius: 0 !important; /* Remove arredondamento individual no mobile */
+    }
+
+    .table td:last-child {
+        border-bottom: none;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    /* O pseudo-elemento que cria o "Título" da coluna à esquerda */
+    .table td::before {
+        content: attr(data-label); /* Pega o valor do atributo data-label */
+        position: absolute;
+        left: 0;
+        width: 50%;
+        text-align: left;
+        font-weight: 600;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        top: 12px;
+    }
+
+    /* Esconde o ID no mobile pois ocupa espaço */
+    .table td.index-col {
+        display: none;
+    }
+}
+
+
+
+/* Ajustes de Responsividade para telas menores */
+@media (max-width: 992px) {
+
+    #navbar {
+        padding: 5px 30px;
+    }
+
+    .event-detail-hero {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .event-image-detail {
+        height: 350px; /* Ajusta a altura da imagem em telas menores */
+    }
+    .event-title-detail {
+        font-size: 2.2rem;
+        padding-left: 10px;
+    }
+    .event-info-card {
+        padding: 20px !important;
+    }
+    .meta-item {
+        font-size: 1rem;
+    }
+    .meta-item ion-icon {
+        font-size: 1.4rem;
+    }
+    .description-title {
+        font-size: 1.8rem;
+    }
+    .event-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .event-image-detail {
+        height: 300px; /* Mais ajuste para mobile */
+        margin-bottom: 25px; /* Espaço abaixo da imagem no mobile */
+    }
+    .event-info-card {
+        margin-top: 0; /* Remove margem top em mobile */
+        padding: 25px !important;
+    }
+    .event-title-detail {
+        font-size: 1.8rem;
+        text-align: center; /* Centraliza título no mobile */
+        border-left: none; /* Remove borda lateral */
+        padding-left: 0;
+        margin-bottom: 20px !important;
+    }
+    .event-title-detail::after { /* Adiciona linha abaixo do título no mobile */
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background-color: #FF5722;
+        margin: 10px auto 0;
+        border-radius: 2px;
+    }
+    .event-meta-group {
+        text-align: center; /* Centraliza infos no mobile */
+        padding: 15px 0;
+        margin-bottom: 25px !important;
+    }
+    .meta-item {
+        justify-content: center; /* Centraliza o ícone e texto */
+        font-size: 0.95rem;
+    }
+    .meta-item ion-icon {
+        font-size: 1.3rem;
+    }
+    .event-confirm-btn {
+        width: 100%; /* Botão full width no mobile */
+    }
+    #description-container {
+        padding: 25px;
+        margin-top: 30px !important;
+    }
+    .description-title {
+        font-size: 1.6rem;
+
+    }
+}
+
+/* MEDIA QUERIES (Responsividade básica para o layout de cards) */
+@media (max-width: 992px) {
+    #cards-container .card {
+        /* 2 colunas */
+        width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 600px) {
+    #navbar {
+        padding: 0px 0px;
+    }
+
+    button.navbar-toggler{
+        font-size: 15px;
+    }
+
+    .navbar-toggler-icon{
+        color: #FF5722;
+        font-weight: 700;
+    }
+
+
+    #navbar img {
+        width: 40%;
+        height: auto;
+    }
+    .navbar-nav {
+        gap: 15px;
+    }
+    #cards-container .card {
+        /* 1 coluna */
+        width: 100%;
+    }
+    #search-container h1 {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* CORREÇÃO CRÍTICA PARA MOBILE: ANULA display: flex */
+@media (max-width: 991.98px) {
+    /* O display: flex em #navbar está quebrando o collapse do Bootstrap.
+       No mobile, ele deve permitir o comportamento padrão (display: block). */
+    #navbar {
+        display: block !important;
+        /* Adicione flex e justify-content apenas para os itens que devem estar na mesma linha (logo e toggler) */
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    /* Garante que o menu colapsável ocupe a largura total */
+    #navbarContent {
+        width: 100%;
+    }
+
+    /* Formatação dos links em lista vertical no mobile */
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 0; /* Remove o gap horizontal */
+        padding-top: 10px;
+    }
+
+    .nav-item {
+        /* Adiciona uma borda sutil para separar os itens */
+        border-top: 1px solid #eee;
+        padding: 8px 0;
+    }
+}
