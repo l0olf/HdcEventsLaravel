@@ -25,7 +25,7 @@ A aplicação aborda conceitos fundamentais como:
 - [x] **CRUD de Eventos:** Criação, leitura, atualização e exclusão de eventos.
 - [x] **Upload de Fotos:** Capa personalizada para cada evento.
 - [x] **Participação:** Usuários podem confirmar presença nos eventos.
-- [ ] **Dashboard:** Área administrativa para gerenciar seus eventos.
+- [x] **Dashboard:** Área administrativa para gerenciar seus eventos.
 ---
 
 ## 🛠 Tecnologias Utilizadas
